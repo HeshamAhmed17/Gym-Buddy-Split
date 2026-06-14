@@ -174,13 +174,13 @@ function FormUpdateReps({ selectedWorkout, onUpdateReps }) {
           <input
             type="text"
             value={userReps}
-            onChange={(e) => setUserReps(e.target.value)}
+            onChange={(e) => setUserReps(Number(e.target.value))}
           />
           <label>Friend's reps</label>
           <input
             type="text"
             value={friendReps}
-            onChange={(e) => setFriendReps(e.target.value)}
+            onChange={(e) => setFriendReps(Number(e.target.value))}
           />
         </div>
         <button className="btn">Results</button>
