@@ -172,21 +172,15 @@ function FormUpdateReps({ selectedWorkout, onUpdateReps }) {
         <div className="form-group">
           <label>Your reps</label>
           <input
-            type="text"
+            type="number"
             value={userReps}
-            onChange={(e) => {
-              const value = e.target.value;
-              if (value === "" || /^\d+$/.test(value)) setUserReps(value);
-            }}
+            onChange={(e) => setUserReps(e.target.value)}
           />
           <label>Friend's reps</label>
           <input
-            type="text"
+            type="number"
             value={friendReps}
-            onChange={(e) => {
-              const value = e.target.value;
-              if (value === "" || /^\d+$/.test(value)) setFriendReps(value);
-            }}
+            onChange={(e) => setFriendReps(e.target.value)}
           />
         </div>
         <button className="btn">Results</button>
