@@ -1,0 +1,171 @@
+:root {
+  --bg-dark: #121212;
+  --bg-card: #1e1e1e;
+  --neon-yellow: #ccff00;
+  --text-main: #ffffff;
+  --text-muted: #aaaaaa;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* CONTAINER الأب الكبير */
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: 900px;
+  max-width: 100%;
+  background-color: var(--bg-card);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid #2a2a2a;
+  align-items: start; /* بيخلي العناصر متمطش طولياً */
+}
+
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* الجزء الشمال: شايل القائمة وتحتيها فورم الإضافة */
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.workout-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.workout-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #262626;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+.workout-item.selected {
+  border-left-color: var(--neon-yellow);
+  background-color: #2d2d2d;
+}
+
+.workout-item:hover {
+  transform: translateX(5px);
+  background-color: #2a2a2a;
+}
+
+.workout-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+}
+
+.workout-info p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.text-win {
+  color: var(--neon-yellow);
+  font-weight: bold;
+}
+.text-lose {
+  color: #ff4444;
+  font-weight: bold;
+}
+.text-tie {
+  color: var(--text-muted);
+}
+
+/* الأزرار العامة */
+.btn {
+  background-color: var(--neon-yellow);
+  color: #000000;
+  border: none;
+  padding: 10px 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: #b5e600;
+  transform: scale(1.02);
+}
+
+/* فورم تحديث العدات (اللي بتظهر على اليمين) */
+.form-panel {
+  background-color: #262626;
+  padding: 25px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-panel h2 {
+  margin: 0 0 10px 0;
+  color: var(--neon-yellow);
+  font-size: 1.3rem;
+}
+
+/* الكلاس الجديد المخصوص لفورم إضافة تمرين (بتكون على الشمال) */
+.add-workout-form {
+  background-color: #262626;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px dashed #444; /* خط منقط يديها شكل فورم إضافة */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.add-workout-form h3 {
+  margin: 0;
+  color: var(--neon-yellow);
+  font-size: 1.1rem;
+}
+
+/* الـ Inputs والـ Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.form-group input {
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: var(--neon-yellow);
+}
